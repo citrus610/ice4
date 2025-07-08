@@ -257,6 +257,7 @@ struct Searcher {
                     // 8.0+0.08: 14.71 +- 4.17     1.34 elo/byte
                     reduction = (score[i] - victim * 1e5) / -3842;
                 }
+                reduction += !improving;
                 if (reduction < 0) {
                     reduction = 0;
                 }
