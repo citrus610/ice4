@@ -258,7 +258,7 @@ struct Searcher {
                     reduction = (score[i] - victim * 1e5) / -3842;
                 }
                 reduction += !improving;
-                if (reduction < 0) {
+                if (reduction < 0 || legals < 4) {
                     reduction = 0;
                 }
 
