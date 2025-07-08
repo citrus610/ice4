@@ -318,6 +318,10 @@ struct Searcher {
             return 0;
         }
 
+        if (depth && best >= beta && abs(best) < 20000 && abs(alpha) < 20000) {
+            best = (best * depth + beta) / (depth + 1);
+        }
+
         if ((depth || best != eval) && best > LOST + ply) {
             tt.eval = best;
             tt.depth = depth;
