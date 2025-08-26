@@ -279,11 +279,11 @@ struct Searcher {
             legals++;
             if (v > best) {
                 best = v;
-                bestmv = moves[i];
             }
             if (v > alpha) {
                 alpha = v;
                 raised_alpha = 1;
+                bestmv = moves[i];
             }
             if (v >= beta) {
                 int bonus = 56 * depth;
